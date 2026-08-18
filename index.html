@@ -1917,6 +1917,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
   </div>
 </footer>
 <script>
+window._rafT=function(fn){var q=false;return function(){if(!q){q=true;requestAnimationFrame(function(){q=false;fn();});}};};
 (function(){
   /* ---------- language ---------- */
   var nodes = document.querySelectorAll('[data-en]');
@@ -1949,7 +1950,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
     hdr.classList.toggle('solid', window.scrollY > 40);
   }
   onScroll();
-  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('scroll',window._rafT(onScroll),{passive:true});
 
   /* ---------- mobile menu ---------- */
   var burger = document.getElementById('burger');
@@ -2228,7 +2229,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
 <script>
 (function(){var t=document.getElementById('toTop');if(!t)return;
 function s(){t.classList.toggle('show',(window.scrollY||document.documentElement.scrollTop)>window.innerHeight*0.6);}
-window.addEventListener('scroll',s,{passive:true});
+window.addEventListener('scroll',window._rafT(s),{passive:true});
 t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});s();})();
 </script>
 
@@ -2264,10 +2265,10 @@ t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})
     io.observe(sec);
   } else { sec.classList.add('in'); }
   var ghost=sec.querySelector('.em-ghost');
-  window.addEventListener('scroll',function(){
+  window.addEventListener('scroll',window._rafT(function(){
     var r=sec.getBoundingClientRect(); var mid=(r.top+r.height/2-window.innerHeight/2);
     if(ghost) ghost.style.transform='translate(-50%,-50%) translateY('+(mid*-0.05)+'px)';
-  },{passive:true});
+  }),{passive:true});
 })();
 
 </script>
@@ -2292,7 +2293,7 @@ t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})
     var r=sec.getBoundingClientRect(); var prog=(r.top+r.height/2-window.innerHeight/2)/window.innerHeight;
     imgs.forEach(function(im,i){ im.style.transform='translateY('+(prog*facs[i]*60).toFixed(1)+'px)'; });
   }
-  window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll); onScroll();
+  window.addEventListener('scroll',window._rafT(onScroll),{passive:true}); window.addEventListener('resize',onScroll); onScroll();
 })();
 </script>
 
@@ -2306,7 +2307,7 @@ t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})
     sec.style.setProperty('--iy',(1.6+(1-p)*9.4).toFixed(2)+'vh');
     sec.style.setProperty('--rr',(26+(1-p)*22).toFixed(1)+'px');
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('scroll',window._rafT(onScroll),{passive:true});
   window.addEventListener('resize',onScroll); onScroll();
 })();
 </script>

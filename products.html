@@ -1192,6 +1192,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
   </div>
 </footer>
 <script>
+window._rafT=function(fn){var q=false;return function(){if(!q){q=true;requestAnimationFrame(function(){q=false;fn();});}};};
 (function(){
   /* ---------- language ---------- */
   var nodes = document.querySelectorAll('[data-en]');
@@ -1224,7 +1225,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
     hdr.classList.toggle('solid', window.scrollY > 40);
   }
   onScroll();
-  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('scroll',window._rafT(onScroll),{passive:true});
 
   /* ---------- mobile menu ---------- */
   var burger = document.getElementById('burger');
@@ -1475,7 +1476,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
 <script>
 (function(){var t=document.getElementById('toTop');if(!t)return;
 function s(){t.classList.toggle('show',(window.scrollY||document.documentElement.scrollTop)>window.innerHeight*0.6);}
-window.addEventListener('scroll',s,{passive:true});
+window.addEventListener('scroll',window._rafT(s),{passive:true});
 t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});s();})();
 </script>
 
