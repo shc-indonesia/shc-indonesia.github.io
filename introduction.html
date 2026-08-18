@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
 <head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXN76PZ0ET"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXN76PZ0ET');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xyy9oa42uq");
+</script>
+
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PT. Seo Heung Indoraya — Total Solution Provider</title>
@@ -1218,7 +1236,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
     </nav>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" id="btn-en" aria-pressed="true">EN</button>
-      <button type="button" id="btn-ko" aria-pressed="false">한국어</button>
+      <button type="button" id="btn-ko" aria-pressed="false">KR</button>
     </div>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -1280,7 +1298,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
         <p class="combo-lead" data-en="Instead of juggling dozens of vendors, customs and inventory on your own, SHI consolidates the entire purchasing chain into one accountable partner — cutting lead time, cost and risk." data-ko="수십 개의 공급처와 통관, 재고를 직접 관리하는 대신, SHI가 구매 전 과정을 하나의 책임 파트너로 통합하여 리드타임과 비용, 리스크를 줄여 드립니다.">Instead of juggling dozens of vendors, customs and inventory on your own, SHI consolidates the entire purchasing chain into one accountable partner — cutting lead time, cost and risk.</p>
         <div class="atb-stack atb-row">
           <div class="atb-card atb-asis">
-            <span class="atb-tag" data-en="As-Is" data-ko="As-Is">As-Is</span>
+            <span class="atb-tag" data-en="As-Is" data-ko="현재">As-Is</span>
             <h3 data-en="Conventional purchasing" data-ko="기존 구매 방식">Conventional purchasing</h3>
             <ul>
               <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h5v5H4zM15 5h5v5h-5zM9.5 14.5h5v5h-5z"/></svg></span><span data-en="Dozens of scattered vendors managed one by one" data-ko="수십 개의 분산된 공급처를 하나하나 개별 관리">Dozens of scattered vendors managed one by one</span></li>
@@ -1293,7 +1311,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
             <svg viewBox="0 0 52 24" width="52" height="24" fill="none"><path d="M3 12h42M35 4l10 8-10 8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="atb-card atb-tobe">
-            <span class="atb-tag" data-en="To-Be" data-ko="To-Be">To-Be</span>
+            <span class="atb-tag" data-en="To-Be" data-ko="개선 후">To-Be</span>
             <h3 data-en="With SHI&rsquo;s purchasing system" data-ko="SHI 구매 시스템 적용 시">With SHI&rsquo;s purchasing system</h3>
             <ul>
               <li><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><circle cx="5" cy="6" r="1.8"/><circle cx="19" cy="6" r="1.8"/><circle cx="5" cy="18" r="1.8"/><circle cx="19" cy="18" r="1.8"/><path d="M10.2 10.2 6.3 7.3M13.8 10.2 17.7 7.3M10.2 13.8 6.3 16.7M13.8 13.8 17.7 16.7"/></svg></span><span data-en="One integrated partner consolidating multiple suppliers" data-ko="여러 공급사를 하나로 통합하는 단일 파트너">One integrated partner consolidating multiple suppliers</span></li>
@@ -1520,8 +1538,8 @@ footer .wrap{max-width:940px!important;margin:0 auto}
       </div>
     </div>
     <div class="f-bot">
-      <p data-en="Copyright © 2026 PT. Seo Heung Indoraya. All rights reserved." data-ko="Copyright © 2026 PT. Seo Heung Indoraya. All rights reserved.">Copyright &copy; 2026 PT. Seo Heung Indoraya. All rights reserved.</p>
-      <p data-en="We Lead to Possibilities Beyond Connection" data-ko="We Lead to Possibilities Beyond Connection">We Lead to Possibilities Beyond Connection</p>
+      <p data-en="Copyright © 2026 PT. Seo Heung Indoraya. All rights reserved." data-ko="© 2026 PT. Seo Heung Indoraya. 모든 권리 보유.">Copyright &copy; 2026 PT. Seo Heung Indoraya. All rights reserved.</p>
+      <p data-en="We Lead to Possibilities Beyond Connection" data-ko="연결을 넘어 새로운 가능성을 이끕니다">We Lead to Possibilities Beyond Connection</p>
     </div>
   </div>
 </footer>
@@ -1538,6 +1556,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
 
   function setLang(lang){
     document.documentElement.setAttribute('data-lang', lang);
+    try{localStorage.setItem('shi-lang', lang);}catch(e){}
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
     document.title = titles[lang]; var nodes = document.querySelectorAll('[data-en]');
     for (var i = 0; i < nodes.length; i++){
@@ -1549,6 +1568,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
   }
   btnEn.addEventListener('click', function(){ setLang('en'); });
   btnKo.addEventListener('click', function(){ setLang('ko'); });
+  try{var _shiL=localStorage.getItem('shi-lang'); if(_shiL==='ko'||_shiL==='en'){ setLang(_shiL); }}catch(e){}
 
   /* ---------- header state ---------- */
   var hdr = document.getElementById('hdr');
@@ -2842,6 +2862,22 @@ html.leaving-nav::before{content:"";position:fixed;inset:0;background:#ffffff;z-
   }, true);
 })();
 </script>
+<script id="ga-events">
+(function(){
+  function ev(n,p){ if(typeof gtag==='function') gtag('event', n, p||{}); }
+  document.addEventListener('click', function(e){
+    var t=e.target;
+    var a=t.closest && t.closest('a,button'); if(!a) return;
+    if(a.id==='btn-en') ev('language_switch',{language:'en'});
+    if(a.id==='btn-ko') ev('language_switch',{language:'kr'});
+    var href=(a.getAttribute && a.getAttribute('href'))||'';
+    if(/contact\.html/.test(href)) ev('contact_click',{label:(a.textContent||'').trim().slice(0,40)});
+    var prod=t.closest && t.closest('.prod');
+    if(prod){ var m=((prod.getAttribute('href')||'').match(/item=([\w-]+)/)); ev('product_open',{category:m?m[1]:'unknown'}); }
+  }, true);
+})();
+</script>
+
 </body>
 
 </html>
