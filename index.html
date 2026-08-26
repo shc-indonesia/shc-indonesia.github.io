@@ -1626,8 +1626,8 @@ footer .wrap{max-width:940px!important;margin:0 auto}
         <li>
           <a href="contact.html" data-en="Contact" data-ko="문의">Contact</a>
           <ul class="sub">
-            <li><a href="contact.html#location" data-en="Directions" data-ko="오시는 길">Directions</a></li>
             <li><a href="contact.html#contact" data-en="Contact Us" data-ko="문의하기">Contact Us</a></li>
+            <li><a href="contact.html#location" data-en="Directions" data-ko="오시는 길">Directions</a></li>
           </ul>
         </li>
         <li>
@@ -3254,6 +3254,18 @@ window.addEventListener('load',reg);})();
 /* pager: lime active retained */
 #history .tl-pg.on{background:var(--lime)!important}
 #history .tl-pg{background:rgba(255,255,255,.28)!important}
+</style>
+<style id="patch-nav-slide">
+@media(min-width:961px){
+  #nav .sub a{opacity:0;transform:translateX(-8px);transition:opacity .32s ease,transform .32s cubic-bezier(.2,.8,.2,1),background .2s ease,color .2s ease!important}
+  #nav>ul>li:hover>.sub a,#nav>ul>li:focus-within>.sub a{opacity:1;transform:translateX(0)}
+  #nav>ul>li:hover>.sub li:nth-child(1) a,#nav>ul>li:focus-within>.sub li:nth-child(1) a{transition-delay:.04s}
+  #nav>ul>li:hover>.sub li:nth-child(2) a,#nav>ul>li:focus-within>.sub li:nth-child(2) a{transition-delay:.10s}
+  #nav>ul>li:hover>.sub li:nth-child(3) a,#nav>ul>li:focus-within>.sub li:nth-child(3) a{transition-delay:.16s}
+  #nav>ul>li:hover>.sub li:nth-child(4) a,#nav>ul>li:focus-within>.sub li:nth-child(4) a{transition-delay:.22s}
+  #nav>ul>li:hover>.sub li:nth-child(5) a,#nav>ul>li:focus-within>.sub li:nth-child(5) a{transition-delay:.28s}
+}
+@media(prefers-reduced-motion:reduce){#nav .sub a{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </body>
 
