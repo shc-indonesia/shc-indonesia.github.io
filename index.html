@@ -2554,7 +2554,7 @@ footer .wrap{max-width:1260px!important}
 .gp-list li{display:flex;gap:9px;align-items:flex-start}
 .gp-list em{flex:none;min-width:40px;font-style:normal;font-size:.55rem;font-weight:800;color:#8ea0d8;background:rgba(120,132,200,.16);border-radius:6px;padding:4px 5px;text-align:center}
 .gp-list span{font-size:.8rem;line-height:1.35;color:#d6dbf0}
-.gnet-head{position:absolute;left:0;right:0;top:0;max-width:1340px;margin:0 auto;padding:clamp(84px,12vh,140px) var(--pad-x) 0;z-index:5;pointer-events:none}
+.gnet-head{position:absolute;left:0;right:0;top:0;max-width:1340px;margin:0 auto;padding:clamp(64px,8vh,104px) var(--pad-x) 0;z-index:5;pointer-events:none}
 .gnet-eyebrow{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#3FC0D4;margin-bottom:16px;padding-left:20px;position:relative}
 .gnet-eyebrow::before{content:"";position:absolute;left:0;top:50%;width:13px;height:3px;background:linear-gradient(90deg,#3FC0D4,#CDF24E);transform:translateY(-50%) skewX(-20deg)}
 .gnet-title{font-size:clamp(1.9rem,4vw,3.3rem);font-weight:800;line-height:1.12;letter-spacing:-.02em;color:#fff;margin:0 0 16px;text-shadow:0 2px 24px rgba(5,8,18,.7)}
@@ -2577,9 +2577,11 @@ footer .wrap{max-width:1260px!important}
  .gnet-leaflet{position:relative;height:60vh}
  .gnet-head{position:relative;padding:40px var(--pad-x) 16px}
  .gnet-bar{position:relative;gap:14px;padding-top:18px}
+ .gnet-info{max-height:none;overflow:visible}
 }
 
-.gnet-info{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;margin-top:clamp(30px,7vh,70px);width:min(330px,90%);background:rgba(13,17,30,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px;box-shadow:0 26px 54px -18px rgba(0,0,0,.7);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .4s cubic-bezier(.2,.8,.2,1),visibility .3s;pointer-events:auto}
+.gnet-info{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;margin-top:clamp(16px,3vh,32px);width:min(330px,90%);max-height:calc(100vh - 330px);overflow-y:auto;overscroll-behavior:contain;background:rgba(13,17,30,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px;box-shadow:0 26px 54px -18px rgba(0,0,0,.7);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s ease,transform .4s cubic-bezier(.2,.8,.2,1),visibility .3s;pointer-events:auto}
+.gnet-info::-webkit-scrollbar{width:6px}.gnet-info::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:6px}
 .gnet-info.on{opacity:1;visibility:visible;transform:none}
 .gnet-info .gp-top{display:flex;align-items:center;gap:8px;margin:0 0 9px;flex-wrap:wrap}
 .gnet-info .gp-top b{font-size:1.05rem;font-weight:800;color:#fff}
