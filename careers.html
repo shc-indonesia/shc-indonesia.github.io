@@ -1201,6 +1201,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
           <ul class="sub">
             <li><a href="careers.html#careers" data-en="Careers" data-ko="채용">Careers</a></li>
             <li><a href="careers.html#emp-benefits" data-en="Employee Benefits" data-ko="복리후생">Employee Benefits</a></li>
+            <li><a href="careers.html#emp-interviews" data-en="Meet the Team" data-ko="팀 소개">Meet the Team</a></li>
           </ul>
         </li>
       </ul>
@@ -1366,7 +1367,7 @@ footer .wrap{max-width:940px!important;margin:0 auto}
 
 <section class="section sec-ph" id="emp-interviews">
   <div class="wrap">
-    <span class="eyebrow" data-en="Employee Interviews" data-ko="직원 인터뷰">Employee Interviews</span>
+    <span class="eyebrow" data-en="Our People, Our Strength" data-ko="우리의 사람들, 우리의 힘">Our People, Our Strength</span>
     <h2 class="h2" data-en="Meet the Team" data-ko="팀을 소개합니다">Meet the Team</h2>
     <p class="lead" data-en="Get to know the people behind PT. Seo Heung Indoraya — in their own words: what they do, the skills they bring, and what they love about their work." data-ko="PT. Seo Heung Indoraya를 만들어가는 사람들을 만나보세요 — 그들의 목소리로: 하는 일, 가진 역량, 그리고 자신의 일에서 좋아하는 점.">Get to know the people behind PT. Seo Heung Indoraya &mdash; in their own words: what they do, the skills they bring, and what they love about their work.</p>
     <div class="mp-grid">
@@ -1434,6 +1435,14 @@ footer .wrap{max-width:940px!important;margin:0 auto}
             <div class="mp-row"><h3 class="mp-name">Gibran Radiansyach</h3><span class="mp-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
           </div>
         </article>
+    </div>
+    <div class="mp-cta">
+      <span class="mp-cta-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-5 2.5-8 7-9-3.5-.4-5.9 1-7 3.2C10.9 13 8.5 11.6 5 12c4.5 1 7 4 7 9z"/><path d="M12 21V9"/><path d="M12 9c0-2.8 1.8-4.6 5-5-.4 2.8-2.2 4.6-5 5z"/></svg></span>
+      <div class="mp-cta-tx">
+        <b data-en="Great things in business are never done by one person." data-ko="비즈니스의 위대한 성취는 결코 혼자서 이루어지지 않습니다.">Great things in business are never done by one person.</b>
+        <span data-en="It&rsquo;s a team of people." data-ko="사람들이 모인 팀이 함께 만들어냅니다.">It&rsquo;s a team of people.</span>
+      </div>
+      <a class="mp-cta-btn" href="#careers"><span data-en="Join Our Team" data-ko="우리 팀에 합류하세요">Join Our Team</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 </section>
@@ -2413,6 +2422,17 @@ section[id],.jump{scroll-margin-top:96px}
 #emp-interviews .mp-arrow{flex:none;color:#fff}
 #emp-interviews .mp-arrow svg{width:20px;height:20px;transition:transform .25s ease}
 #emp-interviews .mp-card:hover .mp-arrow svg{transform:translate(2px,-2px)}
+#emp-interviews .mp-cta{display:flex;align-items:center;gap:clamp(16px,2vw,26px);margin-top:clamp(22px,2.6vw,36px);padding:clamp(20px,2.2vw,30px) clamp(22px,2.6vw,38px);background:linear-gradient(120deg,#f4f6fd,#ffffff 60%);border:1px solid rgba(24,34,70,.08);border-radius:22px;box-shadow:0 26px 60px -42px rgba(8,10,40,.7);flex-wrap:wrap}
+#emp-interviews .mp-cta-ic{flex:none;width:clamp(48px,4vw,58px);height:clamp(48px,4vw,58px);border-radius:50%;display:grid;place-items:center;color:#fff;background:linear-gradient(150deg,#5566e6,#6a3ae0);box-shadow:0 16px 30px -14px rgba(80,60,210,.8)}
+#emp-interviews .mp-cta-ic svg{width:54%;height:54%}
+#emp-interviews .mp-cta-tx{flex:1 1 300px;min-width:220px}
+#emp-interviews .mp-cta-tx b{display:block;font-size:clamp(1.02rem,1.35vw,1.22rem);font-weight:800;letter-spacing:-.01em;color:#141b32;line-height:1.28}
+#emp-interviews .mp-cta-tx span{display:block;margin-top:3px;font-size:.94rem;color:#6b7189}
+#emp-interviews .mp-cta-btn{flex:none;display:inline-flex;align-items:center;gap:9px;font-size:.92rem;font-weight:700;color:#2c48bd;background:#fff;border:1.5px solid rgba(52,82,200,.32);border-radius:999px;padding:12px 22px;text-decoration:none;transition:background .22s ease,border-color .22s ease,transform .22s ease,box-shadow .22s ease}
+#emp-interviews .mp-cta-btn svg{width:17px;height:17px;transition:transform .22s ease}
+#emp-interviews .mp-cta-btn:hover{background:#3452c8;border-color:#3452c8;color:#fff;transform:translateY(-2px);box-shadow:0 16px 30px -16px rgba(52,82,200,.8)}
+#emp-interviews .mp-cta-btn:hover svg{transform:translateX(3px)}
+@media(max-width:620px){#emp-interviews .mp-cta{flex-direction:column;align-items:flex-start;text-align:left}#emp-interviews .mp-cta-btn{align-self:stretch;justify-content:center}}
 </style>
 <style id="patch-bn">
 #emp-benefits{min-height:auto;justify-content:flex-start;scroll-snap-align:none;padding-top:0;padding-bottom:0}
