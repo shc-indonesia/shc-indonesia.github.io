@@ -1232,6 +1232,7 @@ window._rafT=function(fn){var q=false;return function(){if(!q){q=true;requestAni
   };
 
   function setLang(lang){
+    var nodes = document.querySelectorAll('[data-en]');
     document.documentElement.setAttribute('data-lang', lang);
     try{localStorage.setItem('shi-lang', lang);}catch(e){}
     document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
