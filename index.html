@@ -2533,6 +2533,7 @@ footer .wrap{max-width:1260px!important}
 #globalnet.gnet{font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;position:relative;z-index:9;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;
   height:100vh;min-height:600px;max-height:1000px;overflow:hidden;background:#0b1120;color:#fff}
 .gnet-leaflet{position:absolute;inset:0;z-index:1;background:#0b1120}
+.gnet-osm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.72) contrast(1.05) saturate(.55)}
 .gnet-leaflet .leaflet-container{background:#0b1120;font-family:inherit}
 .gnet-leaflet .leaflet-control-attribution{background:rgba(11,17,32,.6);color:#7a83a5;font-size:10px}
 .gnet-leaflet .leaflet-control-attribution a{color:#9aa3c8}
@@ -2655,7 +2656,9 @@ footer .wrap{max-width:1260px!important}
   if(typeof L==='undefined'){if(_t++>60)return;return setTimeout(init,150);}
   var el=document.getElementById('gnetmap'); if(!el||el._done) return; el._done=1;
   var map=L.map(el,{zoomControl:false,attributionControl:true,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,touchZoom:false,boxZoom:false,keyboard:false,zoomSnap:0.1,fadeAnimation:true}).setView(DATA.id.ll,4);
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png',{subdomains:'abcd',maxZoom:12,minZoom:3,attribution:'© OpenStreetMap © CARTO'}).addTo(map);
+  var _darkBase=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,minZoom:3,attribution:'Tiles © Esri'});
+  var _terr=0;_darkBase.on('tileerror',function(){ if(++_terr===4){ try{map.removeLayer(_darkBase);}catch(e){} el.classList.add('gnet-osm-dark'); L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{subdomains:'abc',maxZoom:19,minZoom:3,attribution:'© OpenStreetMap'}).addTo(map); } });
+  _darkBase.addTo(map);
   Object.keys(DATA).forEach(function(k){var c=DATA[k];
    var icon=L.divIcon({className:'gnet-mk'+(c.home?' gnet-mk-home':''),html:'<i></i>',iconSize:[20,20],iconAnchor:[10,10]});
    var m=L.marker(c.ll,{icon:icon}).addTo(map);
