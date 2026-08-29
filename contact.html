@@ -983,7 +983,7 @@ header.solid #nav a[aria-current="page"]{color:var(--violet)}
 #contact.section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:clamp(112px,13vh,152px);padding-bottom:clamp(40px,6vh,70px)}
 #contact .wrap{width:100%;display:flex;flex-direction:column;gap:clamp(18px,3vh,34px);flex:1;justify-content:center}
 #contact .sec-head{margin-bottom:0}
-#contact .team-grid{grid-template-columns:repeat(3,1fr);flex:1 1 auto;min-height:0}
+#contact .team-grid{grid-template-columns:repeat(2,1fr);flex:1 1 auto;min-height:0}
 #contact .team-card{grid-column:auto!important;min-height:0;justify-content:flex-end}
 #contact .team-card h3{font-size:clamp(1.3rem,1.9vw,1.75rem)}
 #contact .team-card p{font-size:clamp(.96rem,1.05vw,1.06rem)}
@@ -1005,7 +1005,8 @@ header.solid #nav a[aria-current="page"]{color:var(--violet)}
 
 <style>
 /* team cards — reference layout: image top, panel below */
-#contact .team-grid{grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.5vw,20px);background:none;border:0;border-radius:0;overflow:visible;flex:1 1 auto;min-height:0}
+#contact .team-grid{grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.5vw,20px);background:none;border:0;border-radius:0;overflow:visible;flex:1 1 auto;min-height:0}
+#contact .team-card{grid-column:auto}
 #contact .team-card{display:flex;flex-direction:column;padding:0;border:0;border-radius:18px;overflow:hidden;background:#1e1842;isolation:auto;min-height:0;text-align:left;cursor:pointer;box-shadow:0 20px 44px -20px rgba(10,8,30,.55);transition:transform .32s cubic-bezier(.2,.7,.2,1),box-shadow .32s ease}
 #contact .team-card:hover{transform:translateY(-7px);background:#1e1842;box-shadow:0 32px 60px -22px rgba(10,8,30,.7)}
 #contact .tc-img{display:block;flex:0 0 55%;min-height:0;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -1241,22 +1242,13 @@ footer .wrap{max-width:940px!important;margin:0 auto}
       <h2 class="h2" data-en="Which Team Can Assist You?" data-ko="어느 팀이 도와드릴까요?">Which Team Can Assist You?</h2>
     </div>
     <div class="team-grid rv">
-      <button type="button" class="team-card tc-sales" data-email="SHI_LocalLeader@shcglobal.co.kr" data-team="Sales" data-team-ko="영업" data-intro-en="Hi! You are about to contact our Sales team. Complete this form to let us know how we can help you." data-intro-ko="이 양식을 작성해 영업 팀에 문의해 주세요.">
+      <button type="button" class="team-card tc-sales" data-email="SHI_LocalLeader@shcglobal.co.kr" data-team="Sales &amp; Purchasing" data-team-ko="영업·구매" data-intro-en="Hi! You are about to contact our Sales &amp; Purchasing team. Tell us how we can help — a business need or a partnership opportunity." data-intro-ko="영업·구매 팀에 문의해 주세요. 비즈니스 니즈나 파트너십 기회를 알려주세요.">
         <span class="tc-img"></span>
         <span class="tc-panel">
           <svg class="team-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
-          <h3 data-en="Sales" data-ko="영업">Sales</h3>
+          <h3 data-en="Sales &amp; Purchasing" data-ko="영업·구매">Sales &amp; Purchasing</h3>
           <span class="tc-divider"></span>
-          <p class="tc-p" data-en="Discuss your business needs — our team helps you find the right solution." data-ko="비즈니스 니즈를 논의하세요 — 최적의 솔루션을 함께 찾아드립니다." data-hl-en="right solution" data-hl-ko="최적의 솔루션">Discuss your business needs — our team helps you find the <mark>right solution</mark>.</p>
-        </span>
-      </button>
-      <button type="button" class="team-card tc-purch" data-email="SHI_LocalLeader@shcglobal.co.kr" data-team="Purchasing" data-team-ko="구매" data-intro-en="Hi! You are about to contact our Purchasing team. Tell us about your idea or opportunity." data-intro-ko="구매 팀에 아이디어나 사업 기회를 알려주세요.">
-        <span class="tc-img"></span>
-        <span class="tc-panel">
-          <svg class="team-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
-          <h3 data-en="Purchasing" data-ko="구매">Purchasing</h3>
-          <span class="tc-divider"></span>
-          <p class="tc-p" data-en="Become our partner or share a business opportunity — reach out with your ideas." data-ko="파트너가 되거나 사업 기회가 있으신가요 — 아이디어를 보내주세요." data-hl-en="partner" data-hl-ko="파트너">Become our <mark>partner</mark> or share a business opportunity — reach out with your ideas.</p>
+          <p class="tc-p" data-en="Discuss your business needs or share a partnership opportunity — our team helps you find the right solution." data-ko="비즈니스 니즈를 논의하거나 파트너십 기회를 알려주세요 — 최적의 솔루션을 함께 찾아드립니다." data-hl-en="right solution" data-hl-ko="최적의 솔루션">Discuss your business needs or share a partnership opportunity — our team helps you find the <mark>right solution</mark>.</p>
         </span>
       </button>
       <button type="button" class="team-card tc-gen" data-email="shti.rifqi@shcglobal.co.kr" data-team="General inquiries" data-team-ko="일반 문의" data-intro-en="Hi! You are about to contact us with a general question. Complete this form to let us know how we can help you." data-intro-ko="일반 문의 양식을 작성해 주시면 도와드리겠습니다.">
@@ -2059,7 +2051,7 @@ html.leaving-nav::before{content:"";position:fixed;inset:0;background:#ffffff;z-
 #nav .sub a::before{
   counter-increment:idx!important;content:counter(idx,decimal-leading-zero)!important;display:block!important;
   width:auto!important;height:auto!important;min-width:0!important;margin:0!important;padding-top:2px!important;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace!important;font-size:.66rem!important;font-weight:700!important;
+  font-family:Pretendard,system-ui,sans-serif!important;font-size:.66rem!important;font-weight:700!important;
   letter-spacing:.06em!important;color:rgba(63,192,212,.62)!important;background:none!important;border-radius:0!important;
   box-shadow:none!important;transform:none!important;transition:color .2s ease!important;
 }
