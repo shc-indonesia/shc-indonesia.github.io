@@ -1157,6 +1157,10 @@ footer .wrap{max-width:940px!important;margin:0 auto}
 .cover-photo-contact .hero-video{z-index:0;filter:none}
 .cover-photo-contact .wrap{position:relative;z-index:2}
 </style>
+<style id="patch-hero-align">
+.cover-photo-contact .hero-copy{margin-left:clamp(100px,calc(var(--pad-x) + 170px - (100vw - 1120px)/2),170px)}
+@media(max-width:820px){.cover-photo-contact .hero-copy{margin-left:0}}
+</style>
 </head>
 <body>
 <div id="pageEnter"></div>
