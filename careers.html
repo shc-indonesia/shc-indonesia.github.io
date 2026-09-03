@@ -2121,7 +2121,7 @@ html{scroll-snap-type:y proximity!important}
 
 <style id="patch-page-enter">
 /* Fast, professional entrance: soft fade-up of content (no black curtain) */
-#pageEnter{position:fixed;inset:0;z-index:9999;background:#ffffff;pointer-events:none;animation:pgFade .42s ease forwards}
+#pageEnter{position:fixed;inset:0;z-index:9999;background:#ffffff;pointer-events:none;}
 @keyframes pgFade{from{opacity:1}to{opacity:0;visibility:hidden}}
 .cover-photo-contact .hero-copy>*{opacity:0;transform:translateY(20px);animation:heroIn .6s cubic-bezier(.2,.8,.2,1) forwards}
 .cover-photo-contact .hero-copy>*:nth-child(1){animation-delay:.12s}
@@ -2651,11 +2651,11 @@ section[id],.jump{scroll-margin-top:96px}
 #careers .rec-job{outline:none}
 #careers .rec-job:focus-visible{background:rgba(52,82,200,.06)}
 /* overlays */
-.jm-overlay,.lg-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-start;justify-content:center;padding:clamp(16px,4vw,52px) 16px;background:rgba(12,16,40,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;opacity:0;transition:opacity .28s ease}
+.jm-overlay,.lg-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-start;justify-content:center;padding:clamp(16px,4vw,52px) 16px;background:rgba(12,16,40,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;opacity:1;transition:none;}
 .jm-overlay.show,.lg-overlay.show{opacity:1}
 .jm-overlay[hidden],.lg-overlay[hidden]{display:none}
 /* job sheet */
-.jm-sheet{position:relative;width:min(760px,100%);background:#fff;border-radius:22px;box-shadow:0 50px 110px -40px rgba(8,10,40,.7);padding:clamp(30px,4vw,56px) clamp(22px,4vw,54px);transform:translateY(18px) scale(.98);transition:transform .32s cubic-bezier(.2,.7,.2,1);margin:auto}
+.jm-sheet{position:relative;width:min(760px,100%);background:#fff;border-radius:22px;box-shadow:0 50px 110px -40px rgba(8,10,40,.7);padding:clamp(30px,4vw,56px) clamp(22px,4vw,54px);transform:none;transition:none;margin:auto}
 .jm-overlay.show .jm-sheet{transform:none}
 .jm-close,.lg-close{position:absolute;top:16px;right:16px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid rgba(24,34,70,.12);background:#fff;color:#5a6076;display:grid;place-items:center;cursor:pointer;transition:all .2s ease}
 .jm-close:hover,.lg-close:hover{background:#131a30;color:#fff;border-color:transparent}
@@ -2682,7 +2682,7 @@ section[id],.jump{scroll-margin-top:96px}
 .jm-email{font-size:.96rem;color:#454c66;margin:clamp(8px,1.4vw,14px) 0 0}
 .jm-email a{color:#3452c8;font-weight:700}
 /* login sheet */
-.lg-sheet{position:relative;width:min(920px,100%);background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 50px 110px -40px rgba(8,10,40,.7);display:grid;grid-template-columns:1fr 1fr;min-height:520px;transform:translateY(18px) scale(.98);transition:transform .32s cubic-bezier(.2,.7,.2,1);margin:auto}
+.lg-sheet{position:relative;width:min(920px,100%);background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 50px 110px -40px rgba(8,10,40,.7);display:grid;grid-template-columns:1fr 1fr;min-height:520px;transform:none;transition:none;margin:auto}
 @media(max-width:760px){.lg-sheet{grid-template-columns:1fr;min-height:0}.lg-brand{min-height:200px}}
 .lg-overlay.show .lg-sheet{transform:none}
 
@@ -2742,8 +2742,8 @@ body.modal-open{overflow:hidden}
     var currentJob='';
     function isKo(){return document.documentElement.getAttribute('lang')==='ko';}
     function lockScroll(on){document.body.classList.toggle('modal-open',on);}
-    function openOverlay(ov){ov.hidden=false;requestAnimationFrame(function(){ov.classList.add('show')});lockScroll(true);}
-    function closeOverlay(ov){ov.classList.remove('show');setTimeout(function(){ov.hidden=true;if(jobModal.hidden&&loginModal.hidden)lockScroll(false);},280);}
+    function openOverlay(ov){ov.hidden=false;ov.classList.add('show');lockScroll(true);}
+    function closeOverlay(ov){ov.classList.remove('show');ov.hidden=true;if(jobModal.hidden&&loginModal.hidden)lockScroll(false);}
     function openJob(i){
       details.forEach(function(d){d.classList.toggle('on',+d.getAttribute('data-job')===i);});
       var on=jobModal.querySelector('.jm-detail.on .jm-title');
