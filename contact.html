@@ -1992,7 +1992,7 @@ html{scroll-snap-type:y proximity!important}
 
 <style id="patch-page-enter">
 /* Fast, professional entrance: soft fade-up of content (no black curtain) */
-#pageEnter{position:fixed;inset:0;z-index:9999;background:#ffffff;pointer-events:none;}
+#pageEnter{display:none!important;}
 @keyframes pgFade{from{opacity:1}to{opacity:0;visibility:hidden}}
 .cover-photo-contact .hero-copy>*{opacity:0;transform:translateY(20px);animation:heroIn .6s cubic-bezier(.2,.8,.2,1) forwards}
 .cover-photo-contact .hero-copy>*:nth-child(1){animation-delay:.12s}
