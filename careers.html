@@ -2417,15 +2417,15 @@ section[id],.jump{scroll-margin-top:96px}
 #careers .rec-cat-t{font-size:1.02rem;font-weight:800;color:#131a30;margin-top:auto}
 #careers .rec-cat-sub{font-size:.72rem;line-height:1.5;color:#8a90a6}
 #careers .rec-results{margin-top:clamp(30px,4vw,50px)}
-#careers .rec-count{font-size:1rem;color:#4b5268;margin-bottom:8px}
+#careers .rec-count{display:none!important}
 #careers .rec-count b{color:#3452c8;font-weight:800}
 #careers .rec-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(24,34,70,.12)}
-#careers .rec-job{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:clamp(16px,3vw,40px);padding:clamp(20px,2.4vw,30px) 6px;border-bottom:1px solid rgba(24,34,70,.12);cursor:pointer;transition:background .2s,padding .2s}
+#careers .rec-job{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(16px,3vw,40px);padding:clamp(20px,2.4vw,30px) 6px;border-bottom:1px solid rgba(24,34,70,.12);cursor:pointer;transition:background .2s,padding .2s}
 #careers .rec-job:hover{background:linear-gradient(90deg,rgba(52,82,200,.05),transparent);padding-left:16px}
 #careers .rec-job-n{font-size:.95rem;font-weight:700;color:#3452c8;min-width:22px}
 #careers .rec-job-t{font-size:clamp(1.05rem,1.5vw,1.35rem);font-weight:700;color:#131a30}
 #careers .rec-job:hover .rec-job-t{color:#3452c8}
-#careers .rec-job-d{font-size:.9rem;color:#8a90a6;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+#careers .rec-job-d{display:none!important}
 #careers .rec-job-a{color:#3452c8;display:flex}
 #careers .rec-job-a svg{width:20px;height:20px;transition:transform .25s ease}
 #careers .rec-job:hover .rec-job-a svg{transform:translate(2px,-2px)}
@@ -2444,15 +2444,30 @@ section[id],.jump{scroll-margin-top:96px}
     var fLoc='All', fCat=null;
     function apply(){
       var q=(search.value||'').trim().toLowerCase();
+      var hasFilter=!!fCat||!!q;
       var shown=0, idx=0;
       jobs.forEach(function(j){
         var t=(j.textContent||'').replace(/\s+/g,' ').toLowerCase();
-        var ok=(fLoc==='All'||j.getAttribute('data-loc')===fLoc)&&(!fCat||j.getAttribute('data-cat')===fCat)&&(!q||t.indexOf(q)>-1);
+        var ok=hasFilter&&(fLoc==='All'||j.getAttribute('data-loc')===fLoc)&&(!fCat||j.getAttribute('data-cat')===fCat)&&(!q||t.indexOf(q)>-1);
         j.style.display=ok?'':'none';
         if(ok){idx++;j.querySelector('.rec-job-n').textContent=String(idx).padStart(2,'0');shown++;}
       });
-      countEl.textContent=shown;
-      emptyEl.hidden=shown>0; listEl.hidden=shown===0;
+      if(countEl)countEl.textContent=shown;
+      listEl.hidden=shown===0;
+      var ko=document.documentElement.getAttribute('lang')==='ko';
+      if(!hasFilter){
+        emptyEl.hidden=false;
+        emptyEl.setAttribute('data-en','Select a category above to view its open positions.');
+        emptyEl.setAttribute('data-ko','위 카테고리를 선택하면 해당 채용 공고가 표시됩니다.');
+        emptyEl.textContent=ko?'위 카테고리를 선택하면 해당 채용 공고가 표시됩니다.':'Select a category above to view its open positions.';
+      }else if(shown===0){
+        emptyEl.hidden=false;
+        emptyEl.setAttribute('data-en','No positions match your filter.');
+        emptyEl.setAttribute('data-ko','조건에 맞는 채용 공고가 없습니다.');
+        emptyEl.textContent=ko?'조건에 맞는 채용 공고가 없습니다.':'No positions match your filter.';
+      }else{
+        emptyEl.hidden=true;
+      }
     }
     locs.forEach(function(b){b.addEventListener('click',function(){locs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');fLoc=b.getAttribute('data-loc');apply();});});
     cats.forEach(function(b){b.addEventListener('click',function(){
