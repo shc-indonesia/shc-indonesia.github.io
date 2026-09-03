@@ -2995,10 +2995,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 <style id="patch-emp-modal">
 #emp-interviews .mp-card{cursor:pointer}
-.em-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-start;justify-content:center;padding:clamp(16px,4vw,52px) 16px;background:rgba(12,16,40,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;opacity:0;transition:opacity .28s ease}
+.em-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-start;justify-content:center;padding:clamp(16px,4vw,52px) 16px;background:rgba(12,16,40,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;opacity:1;transition:none}
 .em-overlay.show{opacity:1}
 .em-overlay[hidden]{display:none}
-.em-sheet{position:relative;width:min(760px,100%);background:linear-gradient(160deg,#f5f7fc,#ffffff 60%);border-radius:24px;box-shadow:0 50px 110px -40px rgba(8,10,40,.7);overflow:hidden;transform:translateY(18px) scale(.98);transition:transform .32s cubic-bezier(.2,.7,.2,1);margin:auto}
+.em-sheet{position:relative;width:min(760px,100%);background:linear-gradient(160deg,#f5f7fc,#ffffff 60%);border-radius:24px;box-shadow:0 50px 110px -40px rgba(8,10,40,.7);overflow:hidden;transform:none;transition:none;margin:auto}
 .em-overlay.show .em-sheet{transform:none}
 .em-close{position:absolute;top:16px;right:16px;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid rgba(24,34,70,.12);background:#fff;color:#5a6076;display:grid;place-items:center;cursor:pointer;transition:all .2s ease}
 .em-close:hover{background:#131a30;color:#fff;border-color:transparent}
@@ -3031,9 +3031,10 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     var cards=document.querySelectorAll('#emp-interviews .mp-card');
     var details=modal.querySelectorAll('.em-detail');
     function lock(on){document.body.classList.toggle('modal-open',on);}
-    function open(i){ details.forEach(function(d){d.classList.toggle('on',+d.getAttribute('data-emp')===i);});
-      modal.hidden=false; requestAnimationFrame(function(){modal.classList.add('show')}); lock(true); }
-    function close(){ modal.classList.remove('show'); setTimeout(function(){modal.hidden=true;lock(false);},280); }
+    function retrans(d){ var lang=document.documentElement.getAttribute('lang')==='ko'?'ko':'en'; [].forEach.call(d.querySelectorAll('[data-en]'),function(el){var v=el.getAttribute('data-'+lang); if(v!==null) el.textContent=v;}); }
+    function open(i){ details.forEach(function(d){var on=(+d.getAttribute('data-emp')===i); d.classList.toggle('on',on); if(on) retrans(d);});
+      modal.hidden=false; modal.classList.add('show'); lock(true); }
+    function close(){ modal.classList.remove('show'); modal.hidden=true; lock(false); }
     cards.forEach(function(c){
       function act(){ open(+ (c.getAttribute('data-emp')||0)); }
       c.addEventListener('click',act);

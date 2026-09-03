@@ -2786,7 +2786,7 @@ footer .f-name{text-transform:uppercase!important;letter-spacing:.02em!important
   if(!odos.length) return;
   function fmt(el,val){
     var to=parseInt(el.getAttribute('data-to'),10)||0, sep=el.getAttribute('data-sep');
-    return sep? val.toLocaleString('id-ID') : String(val);
+    return sep? val.toLocaleString('en-US') : String(val);
   }
   function run(el){
     var to=parseInt(el.getAttribute('data-to'),10)||0, sep=el.getAttribute('data-sep');
