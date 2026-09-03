@@ -2790,7 +2790,7 @@ footer .f-name{text-transform:uppercase!important;letter-spacing:.02em!important
   }
   function run(el){
     var to=parseInt(el.getAttribute('data-to'),10)||0, sep=el.getAttribute('data-sep');
-    var target=sep? to.toLocaleString('id-ID') : String(to);
+    var target=sep? to.toLocaleString('en-US') : String(to);
     var digits=target.replace(/\D/g,'').length;
     var start=null, base=700, stagger=150;
     function frame(ts){
