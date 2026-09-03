@@ -1999,7 +1999,7 @@ html{scroll-snap-type:y proximity!important}
 </style>
 
 <style id="leave-nav-css">
-html.leaving-nav::before{content:"";position:fixed;inset:0;background:#ffffff;z-index:100000;opacity:0;pointer-events:none;animation:leaveNav .2s ease forwards}
+html.leaving-nav::before{display:none!important}
 @keyframes leaveNav{to{opacity:1}}
 @media(prefers-reduced-motion:reduce){html.leaving-nav::before{display:none}}
 </style>
@@ -2015,8 +2015,7 @@ html.leaving-nav::before{content:"";position:fixed;inset:0;background:#ffffff;z-
     var target=href.split('#')[0].split('?')[0].split('/').pop();
     if(!target||target===here) return;
     e.preventDefault();
-    document.documentElement.classList.add('leaving-nav');
-    setTimeout(function(){ window.location.href=href; }, 200);
+    window.location.href=href;
   }, true);
 })();
 </script>
