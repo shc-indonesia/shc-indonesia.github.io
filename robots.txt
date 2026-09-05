@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shc-indonesia.github.io/sitemap.xml
