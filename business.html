@@ -1272,6 +1272,19 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
   "url": "https://shc-indonesia.github.io/"
 }
 </script>
+<!-- instant nav: smooth cross-page transition + prefetch on hover (KOSPA-like) -->
+<style>
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:shcFO .16s ease both}
+::view-transition-new(root){animation:shcFI .24s ease both}
+@keyframes shcFO{to{opacity:0}}
+@keyframes shcFI{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
+</style>
+<script type="speculationrules">
+{"prefetch":[{"urls":["index.html","business.html","products.html","contact.html","careers.html"],"eagerness":"moderate"}]}
+</script>
+
 </head>
 <body>
 <div id="pageEnter"></div>
@@ -1361,7 +1374,7 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
   <div class="wrap">
     <span class="eyebrow dr" data-en="Business Areas" data-ko="사업 영역">Business Areas</span>
     <h2 class="dr dr-d1" data-en="Three connected business areas." data-ko="연결된 세 가지 사업 영역.">Three connected business areas.</h2>
-    <p class="lead dr dr-d1" data-en="As a Total Solution Provider, SHI covers the materials and services a factory needs across its operation — sourced, supplied and managed as one." data-ko="토탈 솔루션 프로바이더로서, SHI는 공장 운영에 필요한 자재와 서비스를 하나로 소싱·공급·관리합니다.">As a Total Solution Provider, SHI covers the materials and services a factory needs across its operation — sourced, supplied and managed as one.</p>
+    <p class="lead dr dr-d1" data-en="The materials and services a factory needs — sourced, supplied and managed as one." data-ko="공장에 필요한 자재와 서비스를 하나로 소싱·공급·관리합니다.">The materials and services a factory needs — sourced, supplied and managed as one.</p>
     <div class="dgrid c3">
       <div class="dcard dr dr-d1"><span class="k">01</span><h3 data-en="Material Purchasing" data-ko="자재 구매">Material Purchasing</h3><p data-en="Raw and sub-materials plus MRO consumables, procured through one integrated agency." data-ko="원부자재와 MRO 소모품을 하나의 통합 대행으로 조달합니다.">Raw and sub-materials plus MRO consumables, procured through one integrated agency.</p></div><div class="dcard dr dr-d2"><span class="k">02</span><h3 data-en="Mold / Injection" data-ko="금형 · 사출">Mold / Injection</h3><p data-en="Tooling and injection parts supplied to manufacturing specification." data-ko="제조 규격에 맞춘 금형 및 사출 부품을 공급합니다.">Tooling and injection parts supplied to manufacturing specification.</p></div><div class="dcard dr dr-d3"><span class="k">03</span><h3 data-en="Equipment &amp; Spare" data-ko="설비 · 스페어">Equipment &amp; Spare</h3><p data-en="Machinery, equipment and spare parts, with intermediary trade support." data-ko="기계·설비·스페어 부품과 중계무역을 지원합니다.">Machinery, equipment and spare parts, with intermediary trade support.</p></div>
     </div>
@@ -1460,7 +1473,7 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
   <div class="wrap bond5">
     <span class="eyebrow dr" data-en="Bonded Logistics Center" data-ko="보세물류센터">Bonded Logistics Center</span>
     <h2 class="dr dr-d1" data-en="A licensed bonded zone, run for you." data-ko="고객을 위해 운영되는 보세구역.">A licensed bonded zone, run for you.</h2>
-    <p class="lead dr dr-d1" data-en="At the PDPLB bonded logistics center, imported goods are held with duty deferred until dispatch — lowering upfront cost, speeding customs, and enabling bulk import and re-export on your behalf." data-ko="PDPLB 보세물류센터에서 수입 물품을 반출 시점까지 관세 유예 상태로 보관합니다 — 초기 비용 절감, 빠른 통관, 대량 수입·재수출 대행.">At the PDPLB bonded logistics center, imported goods are held with duty deferred until dispatch — lowering upfront cost, speeding customs, and enabling bulk import and re-export on your behalf.</p>
+    <p class="lead dr dr-d1" data-en="Imported goods are held duty-deferred until dispatch — cutting upfront cost and speeding customs." data-ko="수입 물품을 반출 시점까지 관세 유예로 보관 — 초기 비용 절감과 빠른 통관.">Imported goods are held duty-deferred until dispatch — cutting upfront cost and speeding customs.</p>
     <div class="bond5-top dr dr-d2">
       <figure class="bond5-photo"><div class="b5carousel bond-photo rv d1" data-b5c>
         <div class="b5c-track">

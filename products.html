@@ -1106,6 +1106,19 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
   "url": "https://shc-indonesia.github.io/"
 }
 </script>
+<!-- instant nav: smooth cross-page transition + prefetch on hover (KOSPA-like) -->
+<style>
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:shcFO .16s ease both}
+::view-transition-new(root){animation:shcFI .24s ease both}
+@keyframes shcFO{to{opacity:0}}
+@keyframes shcFI{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
+</style>
+<script type="speculationrules">
+{"prefetch":[{"urls":["index.html","business.html","products.html","contact.html","careers.html"],"eagerness":"moderate"}]}
+</script>
+
 </head>
 <body>
 <div id="pageEnter"></div>
@@ -1363,7 +1376,7 @@ html{scroll-snap-type:none!important}
     <div class="pr-head pr-head-l">
       <span class="eyebrow" data-en="Shoe Raw Materials" data-ko="신발 원자재">Shoe Raw Materials</span>
       <h2 class="h2" data-en="Raw materials for the footwear line" data-ko="신발 생산 라인을 위한 원자재">Raw materials for the footwear line</h2>
-      <p class="pr-sub" data-en="Rooted in the footwear network, we supply the core upper, bottom and chemical materials that keep shoe production running — sourced to spec and delivered on schedule." data-ko="신발 네트워크에 뿌리를 둔 우리는 갑피·바닥·화학 소재 등 신발 생산에 필요한 핵심 원자재를 규격에 맞춰 소싱하고 일정에 맞춰 공급합니다.">Rooted in the footwear network, we supply the core upper, bottom and chemical materials that keep shoe production running — sourced to spec and delivered on schedule.</p>
+      <p class="pr-sub" data-en="Core upper, bottom and chemical materials for footwear — sourced to spec, delivered on schedule." data-ko="갑피·바닥·화학 등 신발 핵심 원자재 — 규격에 맞춰 소싱, 일정에 맞춰 공급.">Core upper, bottom and chemical materials for footwear — sourced to spec, delivered on schedule.</p>
     </div>
     <div class="shoe-panel">
       <div class="shoe-board">

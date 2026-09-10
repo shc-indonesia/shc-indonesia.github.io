@@ -1248,6 +1248,19 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
 }
 </script>
 <style>.rec-cat-count{display:none!important}</style>
+<!-- instant nav: smooth cross-page transition + prefetch on hover (KOSPA-like) -->
+<style>
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:shcFO .16s ease both}
+::view-transition-new(root){animation:shcFI .24s ease both}
+@keyframes shcFO{to{opacity:0}}
+@keyframes shcFI{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
+</style>
+<script type="speculationrules">
+{"prefetch":[{"urls":["index.html","business.html","products.html","contact.html","careers.html"],"eagerness":"moderate"}]}
+</script>
+
 </head>
 <body>
 <div id="pageEnter"></div>

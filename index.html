@@ -1656,6 +1656,19 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
   "url": "https://shc-indonesia.github.io/"
 }
 </script>
+<!-- instant nav: smooth cross-page transition + prefetch on hover (KOSPA-like) -->
+<style>
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:shcFO .16s ease both}
+::view-transition-new(root){animation:shcFI .24s ease both}
+@keyframes shcFO{to{opacity:0}}
+@keyframes shcFI{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
+</style>
+<script type="speculationrules">
+{"prefetch":[{"urls":["index.html","business.html","products.html","contact.html","careers.html"],"eagerness":"moderate"}]}
+</script>
+
 </head>
 <body>
 <div id="pageEnter"></div>
@@ -1733,7 +1746,6 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
       <span class="eyebrow on-dark rv" data-en="Total Solution Provider" data-ko="토탈 솔루션 프로바이더">Total Solution Provider</span>
       <h1 class="display rv d1" data-en="We Lead to Possibilities Beyond Connection" data-ko="연결을 넘어, 새로운 가능성을 이끕니다">We Lead to Possibilities Beyond Connection</h1>
       <p class="hero-values rv d2" data-en="Start Here, Shift Higher. Connect Ahead." data-ko="여기서 시작해, 더 높이 도약하고, 앞서 연결합니다.">Start Here, Shift Higher. Connect Ahead.</p>
-      <p class="lead rv d3" data-en="A total solution provider for Indonesia's manufacturing industry — MRO distribution &amp; sales, integrated trade, and a Bonded Logistics Center." data-ko="인도네시아 제조 산업을 위한 토탈 솔루션 프로바이더 — MRO 유통·판매, 통합 무역, 그리고 보세물류센터.">A total solution provider for Indonesia's manufacturing industry — MRO distribution &amp; sales, integrated trade, and a Bonded Logistics Center.</p>
       <div class="hero-cta rv d4">
         <a href="business.html#about" class="btn btn-teal"><span data-en="Explore SHI" data-ko="SHI 살펴보기">Explore SHI</span><span class="ar">→</span></a>
         <a href="contact.html#contact" class="btn btn-ghost"><span data-en="Contact us" data-ko="문의하기">Contact us</span></a>
