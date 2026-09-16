@@ -3368,6 +3368,27 @@ window.addEventListener('load',reg);})();
 }
 @media(prefers-reduced-motion:reduce){#nav .sub a{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
+<style id="patch-slim-header">
+/* Slimmer top menu (76px) + matching section top space, so pages scroll shorter without resizing any card */
+#nav>ul>li{height:76px!important}
+header>.bar{height:76px!important}
+html{scroll-padding-top:88px!important}
+.section{min-height:auto!important;padding-top:clamp(38px,4.4vh,56px)!important;padding-bottom:clamp(38px,4.4vh,56px)!important}
+</style>
+<style id="patch-compact-v2">
+.hero,.page-hero,.cover-collage{min-height:82vh!important;height:auto!important}
+
+.gnet{height:auto!important;max-height:none!important}
+
+html{scroll-snap-type:none!important}
+.section{scroll-snap-align:none!important}
+
+/* Higher density so panels are shorter and pages scroll less */
+.section{padding-top:clamp(26px,3vh,40px)!important;padding-bottom:clamp(26px,3vh,40px)!important}
+.h2{margin-bottom:.4em!important}
+.lead{margin-top:.35em!important;margin-bottom:.2em!important}
+.news-img{aspect-ratio:16/9!important}
+</style>
 </body>
 
 </html>

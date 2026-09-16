@@ -2184,6 +2184,20 @@ section[id],.jump{scroll-margin-top:96px}
 }
 @media(prefers-reduced-motion:reduce){#nav .sub a{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
+<style id="patch-slim-header">
+/* Slimmer top menu (76px) + matching section top space, so pages scroll shorter without resizing any card */
+#nav>ul>li{height:76px!important}
+header>.bar{height:76px!important}
+html{scroll-padding-top:88px!important}
+.section{min-height:auto!important;padding-top:clamp(38px,4.4vh,56px)!important;padding-bottom:clamp(38px,4.4vh,56px)!important}
+#contact.section,#location.section{min-height:74vh!important}
+</style>
+<style id="patch-compact-v2">
+.hero,.page-hero,.cover-collage{min-height:82vh!important;height:auto!important}
+
+html{scroll-snap-type:none!important}
+.section{scroll-snap-align:none!important}
+</style>
 </body>
 
 </html>

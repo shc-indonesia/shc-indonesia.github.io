@@ -1353,9 +1353,10 @@ footer .wrap{max-width:1160px!important;margin:0 auto}
 </header>
 
 <style id="patch-biz-banner">
-#about.biz-banner{position:relative;min-height:0;height:auto;padding:0;display:block;background:#e9edf3;overflow:hidden;scroll-snap-align:start}
-#about.biz-banner img{display:block;width:100%;height:auto;aspect-ratio:1920/640}
-#about.biz-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:96px;background:linear-gradient(180deg,rgba(18,16,42,.5),rgba(18,16,42,0));z-index:2;pointer-events:none}
+/* whole banner content, full width; trim only the empty floor at the bottom (top-aligned) */
+#about.biz-banner{position:relative;width:100%;aspect-ratio:1920/706;padding:0;display:block;background:#dcecfd;overflow:hidden;scroll-snap-align:start}
+#about.biz-banner img{display:block;width:100%;height:auto}
+#about.biz-banner::before{content:"";position:absolute;top:0;left:0;right:0;height:92px;background:linear-gradient(180deg,rgba(18,16,42,.4),rgba(18,16,42,0));z-index:2;pointer-events:none}
 </style>
 <section class="biz-banner" id="about">
   <img src="business-hero.jpg" alt="SHC — Your Trusted Purchasing Solution: purchasing solution, procurement agency, and a wide range of products (MRO, machinery, consumables and more)" loading="eager">
@@ -3815,6 +3816,29 @@ window.addEventListener('load',reg);})();
 #pdplb .pdplb-hero{padding-bottom:clamp(18px,2.4vh,30px)!important}
 #customers{padding-top:clamp(6px,1.2vh,16px)!important;min-height:auto!important}
 #customers>.wrap{padding-top:clamp(18px,2.6vh,34px)!important}
+</style>
+<style id="patch-pdplb-gap2">
+/* trim only the oversized empty gap above the MRO/Bonded heading (no size changes to cards) */
+#pdplb .mro-intro{padding-top:clamp(10px,1.6vh,22px)!important}
+</style>
+<style id="patch-slim-header">
+/* Slimmer top menu (76px) + matching section top space, so pages scroll shorter without resizing any card */
+#nav>ul>li{height:76px!important}
+header>.bar{height:76px!important}
+html{scroll-padding-top:88px!important}
+.section{min-height:auto!important;padding-top:clamp(38px,4.4vh,56px)!important;padding-bottom:clamp(38px,4.4vh,56px)!important}
+</style>
+<style id="patch-compact-v2">
+.hero,.page-hero,.cover-collage{min-height:82vh!important;height:auto!important}
+
+html{scroll-snap-type:none!important}
+.section{scroll-snap-align:none!important}
+
+/* Higher density so panels are shorter and pages scroll less */
+.section{padding-top:clamp(26px,3vh,40px)!important;padding-bottom:clamp(26px,3vh,40px)!important}
+.h2{margin-bottom:.4em!important}
+.lead{margin-top:.35em!important;margin-bottom:.2em!important}
+.fac-card{aspect-ratio:16/9!important}
 </style>
 </body>
 
