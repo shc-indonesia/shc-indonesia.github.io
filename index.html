@@ -3376,6 +3376,18 @@ html{scroll-padding-top:88px!important}
 .section{min-height:auto!important;padding-top:clamp(38px,4.4vh,56px)!important;padding-bottom:clamp(38px,4.4vh,56px)!important}
 </style>
 <style id="patch-compact-v2">
+/* News left column: dark text for light bg */
+#news .sec-head h2.h2,#news .sec-head .h2,#news .sec-head h2,#news .news-title{color:#141a30!important;-webkit-text-fill-color:#141a30!important;text-shadow:none!important;background:none!important}
+#news .news-lead,#news .sec-head p{color:#5a6076!important;text-shadow:none!important}
+#news .sec-head .eyebrow{color:#1391a6!important;text-shadow:none!important}
+
+@media(min-width:821px){#news .nnews{margin-top:0!important}}
+
+#news.section{height:auto!important;min-height:0!important;justify-content:flex-start!important}
+#news>.wrap{flex:0 0 auto!important;min-height:0!important;padding-top:14px!important;padding-bottom:14px!important}
+
+.foot-gap{height:0!important;min-height:0!important;display:none!important}
+
 #about-home{padding-top:0!important;padding-bottom:0!important}
 .section.net2{padding-top:0!important;padding-bottom:0!important}
 
